@@ -1,5 +1,21 @@
   console.log('js');
 
+  var domData = function() {
+      console.log("in get");
+      $.ajax({
+          type: "GET",
+          url: "/oldJokes",
+          success: function(response) {
+              console.log('back from post call old:', response);
+
+              for (i = 0; i < 4; i++) {
+                  var responseData = response[i];
+                  document.getElementById('oldDiv').innerHTML += ("<p>" + responseData.jokeQuestion + responseData.punchLine + responseData.whoseJoke + "</p>");
+              }
+          }
+      }); //end getData ajax call
+  }; //end getData function
+  domData();
   $(document).ready(function() {
       console.log('JQ');
       $('#addJokeButton').on('click', function() {
@@ -18,7 +34,6 @@
               data: objectToSend,
               sucess: function(response) {
                   console.log('back from post call: ', response);
-
               },
               error: function() {
                   console.log('error with ajax call...');
@@ -39,7 +54,6 @@
                   //display answer to DOM
                   $('#outputDiv').append('<p>' + responseData.name + ' ' + responseData.question + ' ' + responseData.punchLine + '</p>');
               }
-
           }); //end getData ajax call
       }; //end getData function
 

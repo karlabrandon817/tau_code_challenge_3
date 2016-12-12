@@ -2,9 +2,9 @@
 
 ### Objectives
 [x]Initialize and spin up a server side node/express application.
-[]Send requests to the server from both the browser and using ajax in the client side script.
-[]Display response on the DOM.
-[]Demonstrate the separation of logic between the client and the server.
+[x]Send requests to the server from both the browser and using ajax in the client side script.
+[x]Display response on the DOM.
+[x]Demonstrate the separation of logic between the client and the server.
 
 ### The Joke Book
 

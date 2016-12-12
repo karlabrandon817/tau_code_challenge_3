@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static('public'));
 
 //array for new jokes
-var newJokes = [];
+//var newJokes = [];
 
 // initial jokes provided by the client
 var jokes = [{
@@ -49,11 +49,16 @@ app.get('/', function(req, res) {
 
 app.post('/', urlEncodedParser, function(req, res) {
     console.log('testPost url hit. req.body:', req.body);
-    newJokes.push(req.body);
-    console.log(newJokes);
+    jokes.push(req.body);
+    console.log(jokes);
 }); //end app.post
 
 app.get('/newJokes', function(req, res) {
     console.log('returning new jokes...');
-    res.send(newJokes);
+    res.send(jokes);
+});
+
+app.get('/oldJokes', function(req, res) {
+    console.log('returning old jokes...');
+    res.send(jokes);
 });
