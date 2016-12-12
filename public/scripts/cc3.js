@@ -52,7 +52,7 @@
                   console.log('back from post call:', response);
                   var responseData = response[response.length - 1];
                   //display answer to DOM
-                  $('#outputDiv').append('<p>' + responseData.name + ' ' + responseData.question + ' ' + responseData.punchLine + '</p>');
+                  $('#outputDiv').append('<p>' + responseData.question + ' ' + responseData.punchline + ' ' + responseData.name + '</p>');
               }
           }); //end getData ajax call
       }; //end getData function
