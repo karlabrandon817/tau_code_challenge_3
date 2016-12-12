@@ -10,7 +10,7 @@
 
               for (i = 0; i < 4; i++) {
                   var responseData = response[i];
-                  document.getElementById('oldDiv').innerHTML += ("<p>" + responseData.jokeQuestion + responseData.punchLine + responseData.whoseJoke + "</p>");
+                  document.getElementById('oldDiv').innerHTML += ("<p>" + responseData.jokeQuestion + ' ' + responseData.punchLine + ' ' + responseData.whoseJoke + "</p>");
               }
           }
       }); //end getData ajax call
